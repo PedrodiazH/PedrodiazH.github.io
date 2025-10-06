@@ -1,11 +1,49 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Pedrodiaz.com</title>
-    <meta charset="UTF-8"/>
-  </head>
-  <body>
-    <h1> Bienvenidos a Pedrodiaz.com</h1>
-    <p> Portafolio, proyectos y mas</p>
-  </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedrodiazh.cl</title>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('public/geometric_wallpaper.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- React desde CDN: Esto permite no usar build ya que react viene dentro de este .html -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        // Componente principal del portafolio
+        function Portfolio() {
+            return (
+                <div className="min-h-screen flex items-center justify-center">
+                    {/* Contenedor con fondo semitransparente */}
+                    <div className="bg-white/10 backdrop-blur-md p-8 rounded-lg shadow-xl">
+                        <h1 className="text-5xl font-bold text-white mb-4">
+                            Pedro Díaz H.
+                        </h1>
+                        <p className="text-xl text-white/90">
+                            Automation Engineer
+                        </p>
+                    </div>
+                </div>
+            );
+        }
+        
+        // Renderiza el componente en el div#root
+        ReactDOM.render(<Portfolio />, document.getElementById('root'));
+    </script>
+</body>
 </html>
