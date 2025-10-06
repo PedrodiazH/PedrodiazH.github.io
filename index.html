@@ -34,16 +34,16 @@
                     <div className="flex flex-col items-center -m-10">
                         {/* Contenedor con fondo semitransparente */}
                         <div className="bg-white/10 backdrop-blur-md p-8 rounded-lg shadow-xl mb-8">
-                            <h1 className="text-5xl font-bold text-white mb-4 text-center">
+                            <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-yellow-200 via-amber-400 to-yellow-600 mb-4 text-center drop-shadow-[0_2px_8px_rgba(180,83,9,0.3)]">
                                 Pedro Díaz H.
                             </h1>
-                            <p className="text-xl text-center text-white/90">
+                            <p className="text-2xl text-center text-gray-200 tracking-wide font-light">
                                 Automation Engineer
                             </p>
                         </div>
                         
                         {/* Iconos de redes sociales */}
-                        <div className="flex space-x-8 -mt-8">
+                        <div className="flex space-x-8 -mt-6">
                             <a href="https://github.com/PedrodiazH" target="_blank" rel="noopener noreferrer">
                                 <i className="fab fa-github text-2xl text-white hover:text-black transition transform hover:scale-110"></i>
                             </a>
@@ -56,6 +56,22 @@
                             <a href="mailto:pedroidiazh@gmail.com" target="_blank" rel="noopener noreferrer">
                                 <i className="far fa-envelope text-2xl text-white hover:text-black transition transform hover:scale-110"></i>
                             </a>
+                        </div>
+                        <div className="flex flex-col items-center gap-10 m-10">
+                            {/* Botón superior */}
+                            <a href="proyectos.html" className="bg-white/10 backdrop-blur-md px-12 py-5 rounded-xl text-gray-200 text-2xl font-light tracking-wide hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-2xl border border-white/20">
+                                Proyectos
+                            </a>
+                        
+                            {/* Botones inferiores */}
+                            <div className="flex gap-10">
+                                <a href="otros.html" className="bg-white/10 backdrop-blur-md px-12 py-5 rounded-xl text-gray-200 text-2xl font-light tracking-wide hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-2xl border border-white/20">
+                                    Otras cositas
+                                </a>
+                                <a href="opiniones.html" className="bg-white/10 backdrop-blur-md px-12 py-5 rounded-xl text-gray-200 text-2xl font-light tracking-wide hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-2xl border border-white/20">
+                                    Opiniones?
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
