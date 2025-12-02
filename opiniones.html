@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otras cositas - Pedrodiazh.cl</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('public/geometric_wallpaper.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 8px rgba(251, 191, 36, 0.3));
+        }
+
+        .back-button {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .back-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .back-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        function OpiumsPage() {
+            const [isVisible, setIsVisible] = React.useState(false);
+            
+            React.useEffect(() => {
+                setIsVisible(true);
+            }, []);
+            
+            return (
+                <div className="min-h-screen p-8">
+                    {/* Header en esquina superior izquierda */}
+                    <div 
+                        className="fixed top-8 left-8 glass-card p-6 rounded-xl shadow-2xl z-50"
+                        style={{
+                            opacity: isVisible ? 1 : 0,
+                            transform: isVisible ? 'translate(0, 0)' : 'translate(-30px, -30px)',
+                            transition: 'all 0.8s ease-out'
+                        }}
+                    >
+                        <h1 className="text-3xl font-bold gradient-text mb-1">
+                            Pedro Díaz H.
+                        </h1>
+                        <p className="text-sm text-gray-200 tracking-wide font-light">
+                            Automation Engineer
+                        </p>
+                    </div>
+
+                    {/* Botón de regreso */}
+                    <div 
+                        className="fixed top-8 right-8 z-50"
+                        style={{
+                            opacity: isVisible ? 1 : 0,
+                            transform: isVisible ? 'translateX(0)' : 'translateX(30px)',
+                            transition: 'all 0.8s ease-out 0.2s'
+                        }}
+                    >
+                        <a 
+                            href="index.html" 
+                            className="glass-card back-button px-6 py-3 rounded-xl text-gray-100 text-lg font-light tracking-wide hover:bg-white/20 transition-all duration-300 flex items-center gap-2 shadow-2xl"
+                        >
+                            <i className="fas fa-arrow-left"></i>
+                            <span className="relative z-10">Volver</span>
+                        </a>
+                    </div>
+
+                    {/* Contenedor principal de OPIÑONES */}
+                    <div className="max-w-7xl mx-auto pt-32">
+                        <div 
+                            className="mb-12"
+                            style={{
+                                opacity: isVisible ? 1 : 0,
+                                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                                transition: 'all 0.8s ease-out 0.3s'
+                            }}
+                        >
+                            <h2 className="text-5xl font-bold text-white mb-4">Opiniones</h2>
+                            <h6 className="text-xl font-light text-gray-300 mb-4">Espacio de reflexiones u opiniones</h6>
+                            <div className="h-1 w-32 bg-gradient-to-r from-yellow-200 via-amber-400 to-yellow-600 rounded-full"></div>
+                        </div>
+
+                        {/* Listado de proyectos */}
+                        <div 
+                            className="space-y-3 max-w-2xl mx-auto"
+                            style={{
+                                opacity: isVisible ? 1 : 0,
+                                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                                transition: 'all 0.8s ease-out 0.4s'
+                            }}
+                        >
+                            {/*Aqui opiniones*/}
+                                                        
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+        
+        ReactDOM.render(<OpiumsPage />, document.getElementById('root'));
+    </script>
+</body>
+</html>
