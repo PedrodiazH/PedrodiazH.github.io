@@ -14,12 +14,13 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-attachment: fixed; /* Mejor para móviles */
             min-height: 100vh;
         }
         
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); } /* Añadido un poco de movimiento real */
         }
         
         @keyframes fadeInUp {
@@ -35,10 +36,6 @@
         
         .animate-float {
             animation: float 3s ease-in-out infinite;
-        }
-        
-        .animate-fadeInUp {
-            animation: fadeInUp 0.8s ease-out forwards;
         }
         
         .glass-card {
@@ -116,29 +113,26 @@
         }
     </style>
 </head>
-<body>
-    <div id="root"></div>
-    <canvas id="cubeCanvas" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></canvas>
+<body class="overflow-x-hidden">
+    <canvas id="cubeCanvas" class="fixed top-2 right-2 md:top-5 md:right-5 z-[1000]"></canvas>
     
-    <!-- Contenedor para elementos pequeños debajo del cubo -->
-    <div id="cubeActions" style="position: fixed; top: 250px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 6px; align-items: center; width: 125px;">
-        <!-- Botón Synapta -->
-        <a href="https://www.synaptaing.com/" target="_blank" class="glass-card rounded-lg hover:bg-white/20 transition-all duration-300 w-full shadow-lg hover:scale-105 overflow-hidden h-[50px]">
+    <div id="cubeActions" class="fixed bottom-4 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:bottom-auto md:top-[200px] md:right-5 z-[1000] flex flex-row md:flex-col gap-3 w-[90%] md:w-[125px] justify-center">
+        <a href="https://www.synaptaing.com/" target="_blank" class="glass-card rounded-lg hover:bg-white/20 transition-all duration-300 w-full md:w-full shadow-lg hover:scale-105 overflow-hidden h-[40px] md:h-[50px]">
             <img src="public/Banner ACtual.jpeg" alt="Consultoría" class="w-full h-full object-cover">
         </a>
         
-        <!-- Botón JYP -->
-        <a href="https://www.jypchile.cl/" target="_blank" class="glass-card rounded-lg hover:bg-white/20 transition-all duration-300 w-full shadow-lg hover:scale-105 overflow-hidden h-[50px] flex items-center justify-center">
+        <a href="https://www.jypchile.cl/" target="_blank" class="glass-card rounded-lg hover:bg-white/20 transition-all duration-300 w-full md:w-full shadow-lg hover:scale-105 overflow-hidden h-[40px] md:h-[50px] flex items-center justify-center">
             <img src="public/logo-jyp-300x300.png" alt="JYPchile" class="h-full w-auto object-contain">
         </a>
 
-        <!-- TRIMMEN -->
-        <a href="https://pedrodiazh.github.io/trimmen/" target="_blank" class="glass-card rounded-lg hover:bg-white/20 transition-all duration-300 w-full shadow-lg hover:scale-105 overflow-hidden h-[50px] flex items-center justify-center">
-            <span class="text-white font-semibold text-lg tracking-widest uppercase">
+        <a href="https://pedrodiazh.github.io/trimmen/" target="_blank" class="glass-card rounded-lg hover:bg-white/20 transition-all duration-300 w-full md:w-full shadow-lg hover:scale-105 overflow-hidden h-[40px] md:h-[50px] flex items-center justify-center">
+            <span class="text-white font-semibold text-xs md:text-lg tracking-widest uppercase">
                 Trimmen
             </span>
         </a>
     </div>
+
+    <div id="root"></div>
     
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -154,28 +148,28 @@
             }, []);
             
             return (
-                <div className="h-screen flex items-start justify-center pt-20 overflow-hidden">
-                    <div className="flex flex-col items-center -m-10">
+                <div className="min-h-screen flex items-center md:items-start justify-center pt-8 md:pt-20 px-4 pb-24 md:pb-0">
+                    <div className="flex flex-col items-center w-full max-w-4xl">
                         {/* Header Card */}
                         <div 
-                            className="glass-card p-10 rounded-2xl shadow-2xl mb-8 animate-float"
+                            className="glass-card p-6 md:p-10 rounded-2xl shadow-2xl mb-6 md:mb-8 animate-float w-full max-w-lg"
                             style={{
                                 opacity: isVisible ? 1 : 0,
                                 transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
                                 transition: 'all 0.8s ease-out'
                             }}
                         >
-                            <h1 className="text-6xl font-bold gradient-text mb-4 text-center tracking-tight">
+                            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-2 md:mb-4 text-center tracking-tight leading-tight">
                                 Pedro Díaz H.
                             </h1>
-                            <p className="text-2xl text-center text-gray-100 tracking-wider font-light">
+                            <p className="text-lg md:text-2xl text-center text-gray-100 tracking-wider font-light">
                                 Automation Engineer
                             </p>
                         </div>
                         
                         {/* Social Icons */}
                         <div 
-                            className="flex space-x-10 mb-12"
+                            className="flex space-x-6 md:space-x-10 mb-8 md:mb-12"
                             style={{
                                 opacity: isVisible ? 1 : 0,
                                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -183,63 +177,63 @@
                             }}
                         >
                             <a href="https://github.com/PedrodiazH" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                <i className="fab fa-github text-3xl text-white"></i>
+                                <i className="fab fa-github text-2xl md:text-3xl text-white"></i>
                             </a>
                             <a href="https://www.linkedin.com/in/pedro-diaz-herrera-715b23175/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                <i className="fab fa-linkedin text-3xl text-white"></i>
+                                <i className="fab fa-linkedin text-2xl md:text-3xl text-white"></i>
                             </a>
                             <a href="" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                <i className="fab fa-instagram text-3xl text-white"></i>
+                                <i className="fab fa-instagram text-2xl md:text-3xl text-white"></i>
                             </a>
                             <a href="mailto:pedroidiazh@gmail.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                <i className="far fa-envelope text-3xl text-white"></i>
+                                <i className="far fa-envelope text-2xl md:text-3xl text-white"></i>
                             </a>
                         </div>
                         
                         {/* Navigation Buttons */}
-                        <div className="flex flex-col items-center gap-6">
+                        <div className="flex flex-col items-center gap-4 md:gap-6 w-full">
                             {/* Top Button */}
                             <a 
                                 href="proyectos.html" 
-                                className="glass-card btn-primary px-16 py-6 rounded-2xl text-gray-100 text-2xl font-light tracking-widest shadow-2xl group"
+                                className="glass-card btn-primary px-8 py-4 md:px-16 md:py-6 rounded-2xl text-gray-100 text-lg md:text-2xl font-light tracking-widest shadow-2xl group w-full md:w-auto text-center flex justify-center"
                                 style={{
                                     opacity: isVisible ? 1 : 0,
                                     transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                                     transition: 'all 0.8s ease-out 0.4s'
                                 }}
                             >
-                                <span className="btn-text flex items-center gap-3">
+                                <span className="btn-text flex items-center justify-center gap-3">
                                     <i className="fas fa-folder-open group-hover:rotate-12 transition-transform duration-300"></i>
                                     Proyectos
                                 </span>
                             </a>
                         
                             {/* Bottom Buttons */}
-                            <div className="flex gap-6">
+                            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full md:w-auto">
                                 <a 
                                     href="otros.html" 
-                                    className="glass-card btn-primary px-12 py-6 rounded-2xl text-gray-100 text-xl font-light tracking-widest shadow-2xl group"
+                                    className="glass-card btn-primary px-6 py-4 md:px-12 md:py-6 rounded-2xl text-gray-100 text-base md:text-xl font-light tracking-widest shadow-2xl group w-full sm:w-auto flex justify-center"
                                     style={{
                                         opacity: isVisible ? 1 : 0,
                                         transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                                         transition: 'all 0.8s ease-out 0.5s'
                                     }}
                                 >
-                                    <span className="btn-text flex items-center gap-3">
+                                    <span className="btn-text flex items-center justify-center gap-2 md:gap-3">
                                         <i className="fas fa-star group-hover:rotate-180 transition-transform duration-500"></i>
                                         Otras cositas
                                     </span>
                                 </a>
                                 <a 
                                     href="opiniones.html" 
-                                    className="glass-card btn-primary px-12 py-6 rounded-2xl text-gray-100 text-xl font-light tracking-widest shadow-2xl group"
+                                    className="glass-card btn-primary px-6 py-4 md:px-12 md:py-6 rounded-2xl text-gray-100 text-base md:text-xl font-light tracking-widest shadow-2xl group w-full sm:w-auto flex justify-center"
                                     style={{
                                         opacity: isVisible ? 1 : 0,
                                         transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                                         transition: 'all 0.8s ease-out 0.6s'
                                     }}
                                 >
-                                    <span className="btn-text flex items-center gap-3">
+                                    <span className="btn-text flex items-center justify-center gap-2 md:gap-3">
                                         <i className="fas fa-comment-dots group-hover:scale-110 transition-transform duration-300"></i>
                                         Opiniones?
                                     </span>
@@ -265,33 +259,29 @@
             antialias: true 
         });
         
-        // Configuración del canvas
-        const canvasSize = 125;
+        // Ajuste inicial del canvas según pantalla
+        let canvasSize = window.innerWidth < 768 ? 80 : 125;
         renderer.setSize(canvasSize, canvasSize);
-        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Optimización extra
         camera.position.z = 3;
         
         // Crear dado con texturas
         const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
         
-        // Crear canvas para cada cara del dado
         function createDiceFace(number) {
             const size = 256;
-            const canvas = document.createElement('canvas');
-            canvas.width = size;
-            canvas.height = size;
-            const ctx = canvas.getContext('2d');
+            const faceCanvas = document.createElement('canvas');
+            faceCanvas.width = size;
+            faceCanvas.height = size;
+            const ctx = faceCanvas.getContext('2d');
             
-            // Fondo dorado
             ctx.fillStyle = '#e62e1b';
             ctx.fillRect(0, 0, size, size);
             
-            // Borde
             ctx.strokeStyle = '#fef3c7';
             ctx.lineWidth = 8;
             ctx.strokeRect(4, 4, size - 8, size - 8);
             
-            // Puntos del dado
             ctx.fillStyle = '#ffffff';
             const dotRadius = 18;
             const positions = {
@@ -309,10 +299,9 @@
                 ctx.fill();
             });
             
-            return new THREE.CanvasTexture(canvas);
+            return new THREE.CanvasTexture(faceCanvas);
         }
         
-        // Crear materiales para cada cara (1-6)
         const materials = [
             new THREE.MeshPhongMaterial({ map: createDiceFace(1), shininess: 100, transparent: true, opacity: 0.8 }),
             new THREE.MeshPhongMaterial({ map: createDiceFace(2), shininess: 100, transparent: true, opacity: 0.8 }),
@@ -325,16 +314,11 @@
         const cube = new THREE.Mesh(geometry, materials);
         scene.add(cube);
         
-        // Agregar bordes al dado
         const edges = new THREE.EdgesGeometry(geometry);
-        const lineMaterial = new THREE.LineBasicMaterial({ 
-            color: 0xfef3c7, 
-            linewidth: 2 
-        });
+        const lineMaterial = new THREE.LineBasicMaterial({ color: 0xfef3c7, linewidth: 2 });
         const wireframe = new THREE.LineSegments(edges, lineMaterial);
         cube.add(wireframe);
         
-        // Iluminación
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
         
@@ -342,16 +326,9 @@
         pointLight.position.set(5, 5, 5);
         scene.add(pointLight);
         
-        // Variables para interacción con mouse
-        let mouseX = 0;
-        let mouseY = 0;
-        let targetRotationX = 0;
-        let targetRotationY = 0;
-        let isHovering = false;
-        let scale = 1;
-        let targetScale = 1;
+        let mouseX = 0, mouseY = 0, targetRotationX = 0, targetRotationY = 0;
+        let isHovering = false, scale = 1, targetScale = 1;
         
-        // Detectar mouse sobre el canvas
         canvas.addEventListener('mousemove', (event) => {
             const rect = canvas.getBoundingClientRect();
             mouseX = ((event.clientX - rect.left) / canvasSize) * 2 - 1;
@@ -373,43 +350,31 @@
             mouseY = 0;
         });
         
-        // Animación a 60fps
         let lastTime = 0;
-        const targetFPS = 60;
-        const frameInterval = 1000 / targetFPS;
+        const frameInterval = 1000 / 60;
         
         function animate(currentTime) {
             requestAnimationFrame(animate);
-            
             const deltaTime = currentTime - lastTime;
             
             if (deltaTime >= frameInterval) {
                 lastTime = currentTime - (deltaTime % frameInterval);
                 
-                // Rotación base lenta
                 cube.rotation.x += 0.005;
                 cube.rotation.y += 0.008;
                 
-                // Interacción con mouse
-                if (isHovering) {
+                if (isHovering && window.innerWidth >= 768) {
                     targetRotationX = mouseY * 2;
                     targetRotationY = mouseX * 2;
-                    
-                    // Smooth follow del mouse
                     cube.rotation.x += (targetRotationX - cube.rotation.x) * 0.1;
                     cube.rotation.y += (targetRotationY - cube.rotation.y) * 0.1;
-                    
-                    // Efecto de "respiración" en la opacidad
                     materials.forEach(mat => {
                         mat.opacity = 0.7 + Math.sin(currentTime * 0.003) * 0.2;
                     });
                 }
                 
-                // Smooth scale transition
                 scale += (targetScale - scale) * 0.1;
                 cube.scale.set(scale, scale, scale);
-                
-                // Efecto de pulsación sutil en los bordes
                 lineMaterial.opacity = 0.8 + Math.sin(currentTime * 0.002) * 0.2;
                 
                 renderer.render(scene, camera);
@@ -418,10 +383,9 @@
         
         animate(0);
         
-        // Responsive canvas
         window.addEventListener('resize', () => {
-            const newSize = window.innerWidth < 768 ? 150 : 250;
-            renderer.setSize(newSize, newSize);
+            canvasSize = window.innerWidth < 768 ? 80 : 125;
+            renderer.setSize(canvasSize, canvasSize);
         });
     </script>
 </body>
