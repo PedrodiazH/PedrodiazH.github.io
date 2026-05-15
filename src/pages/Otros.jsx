@@ -6,7 +6,7 @@ import PageHeader from '../components/PageHeader'
 export default function Otros() {
   const [isVisible, setIsVisible] = useState(false)
   const [bookUrl, setBookUrl] = useState(null)
-  const [scale, setScale] = useState(1)
+  const [scale, setScale] = useState(1.6)
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => setIsVisible(true))
@@ -113,7 +113,7 @@ export default function Otros() {
         <div
           className="fixed inset-0 z-[2000] flex items-center justify-center p-3 md:p-6"
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)' }}
-          onClick={() => { setBookUrl(null); setScale(1) }}
+          onClick={() => { setBookUrl(null); setScale(1.6) }}
         >
           <div
             className="relative w-full max-w-5xl h-[90vh] flex flex-col rounded-sm overflow-hidden"
@@ -152,7 +152,7 @@ export default function Otros() {
                 </button>
                 <span className="w-px h-4 mx-1" style={{ background: 'rgba(255,255,255,0.08)' }}></span>
                 <button
-                  onClick={() => { setBookUrl(null); setScale(1) }}
+                  onClick={() => { setBookUrl(null); setScale(1.6) }}
                   className="w-6 h-6 rounded-full flex items-center justify-center hover:bg-white/5 transition-colors cursor-pointer"
                 >
                   <i className="fas fa-times text-amber-700/60 text-[10px]"></i>
