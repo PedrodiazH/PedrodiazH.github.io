@@ -7,7 +7,7 @@ export const projects = [
     tags: ['JavaScript', 'React Native', 'Expo', 'Aleatoriedad Cuántica'],
     year: 2026,
     icon: 'fa-mobile',
-    image: '/Portada.png',
+    image: '/Heissen_QRNG.png',
     links: [
       { label: 'Apple Store', url: 'https://apps.apple.com/cl/app/heissenqrng/id6760141387' },
       { label: 'Android', url: 'https://play.google.com/store/apps/details?id=com.synapta.heissenqrng&hl=es_CL' }
@@ -15,7 +15,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: 'IA Explicable para Reconocimiento de Emociones Faciales',
+    title: 'Desarrollo de algoritmos de IA explicables para el reconocimiento de emociones basado en expresiones faciales',
     description: 'Proyecto de Título. Reconocimiento de emociones con IA explicable comparando LIME y SHAP.',
     details: 'Proyecto de Título desarrollado junto a mi compañero Marcos Carripan. Se realizó una revisión del estado del arte en reconocimiento de emociones faciales (FER), implementación del modelo ResEmoteNet, y un análisis comparativo de explicabilidad utilizando los métodos LIME y SHAP para interpretar las predicciones del modelo.',
     tags: ['Machine Learning', 'Visión por computador', 'Explicabilidad'],
@@ -28,8 +28,8 @@ export const projects = [
   {
     id: 3,
     title: 'Libro de Remuneraciones',
-    description: 'Sistema Local Web App con liquidación de sueldo automática en PDF.',
-    details: 'Proyecto de Software tipo Local Web App diseñado a medida para una empresa. Sistema robusto con gestión de remuneraciones, cálculo automático de impuestos y cotizaciones, y redacción automática de liquidación de sueldo en formato PDF. Desarrollado con React para el frontend, Python para la lógica de negocio y SQL para la persistencia de datos.',
+    description: 'Sistema Local Web App tipo ERP con liquidación de sueldo automática en PDF.',
+    details: 'Proyecto de Software tipo Local Web App diseñado a medida para una empresa. Sistema robusto con gestión de remuneraciones, cálculo automático de impuestos y cotizaciones, y redacción automática de liquidación de sueldo en formato PDF. Desarrollado con React para el frontend, Python para el backend y SQLite para la persistencia de datos.',
     tags: ['React', 'API REST', 'Python', 'SQL'],
     year: 2026,
     icon: 'fa-file-invoice-dollar',
@@ -39,14 +39,15 @@ export const projects = [
   },
   {
     id: 4,
-    title: 'Este portafolio',
-    description: 'Sitio web personal interactivo con diseño moderno y tecnologías web.',
-    details: 'Portafolio personal construido con React 19, Vite, Tailwind CSS v4 y Three.js. Incluye un dado 3D interactivo con Three.js, diseño glassmorphism, paleta de colores dorada, y una interfaz limpia y responsiva. Este proyecto refleja mi enfoque en el detalle visual y la calidad del código.',
-    tags: ['React', 'Vite', 'Three.js', 'Tailwind'],
-    year: 2025,
+    title: 'Jypchile.cl',
+    description: 'Sitio web empresas de mis padres. Servicios de aseo integral y restaurant',
+    details: 'Reestructura de sitio web de JYPCHILE, empresa familiar que apoyo de diferentes formas. Se gestionan correos corporativos con CPanel y hosting con Vercel. El objetivo es marcar una presencia digital, portafolio de los proyectos en +10 años y atraer potenciales licitaciones.',
+    tags: ['React', 'Vite', 'Vercel', 'CSS'],
+    year: 2026,
     icon: 'fa-globe',
+    image: 'jypchile.cl.png',
     links: [
-      { label: 'Repositorio', url: 'https://github.com/PedrodiazH/PedrodiazH.github.io' }
+      { label: 'Sitio web', url: 'https://www.jypchile.cl/' }
     ]
   }
 ]

@@ -28,7 +28,7 @@ export default function Otros() {
           }}
         >
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">Otras cositas</h2>
-          <p className="text-gray-500 text-sm font-light">Proyectos y trabajos más allá de la ingeniería</p>
+          <p className="text-gray-500 text-sm font-light">Proyectos y trabajos más allá de la ingeniería (o no)</p>
         </div>
 
         <div
