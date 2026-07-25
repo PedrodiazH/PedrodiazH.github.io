@@ -62,7 +62,7 @@ export default function Proyectos() {
                     <span className="text-[10px] text-gray-500 font-mono shrink-0">{project.year}</span>
                   </div>
 
-                  <p className="text-[11px] text-gray-400 leading-relaxed mb-2 line-clamp-2">{project.description}</p>
+                  <p className="text-[11px] text-gray-400 leading-relaxed mb-2 line-clamp-3">{project.description}</p>
 
                   <div className="flex flex-wrap gap-1 mb-2">
                     {project.tags.map(tag => (

@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false)
-  const [showPdf, setShowPdf] = useState(false)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -95,43 +94,8 @@ export default function Home() {
             </span>
             <i className="fas fa-arrow-right text-xs text-gray-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all"></i>
           </button>
-
-          <button
-            onClick={() => setShowPdf(true)}
-            className="glass-card btn-primary px-6 py-3.5 rounded-xl text-gray-200 text-sm font-medium tracking-wide group w-full flex items-center justify-between cursor-pointer"
-          >
-            <span className="btn-text flex items-center gap-3">
-              <i className="fas fa-file-pdf text-amber-400/70 text-xs w-5"></i>
-              Curriculum
-            </span>
-            <i className="fas fa-arrow-right text-xs text-gray-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all"></i>
-          </button>
         </div>
       </div>
-
-      {showPdf && (
-        <div
-          className="fixed inset-0 z-[2000] flex items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)' }}
-        >
-          <div className="relative w-full max-w-4xl h-[90vh] glass-card rounded-2xl overflow-hidden flex flex-col">
-            <div className="flex items-center justify-between p-3 border-b border-white/10">
-              <span className="text-gray-300 text-sm font-light">Curriculum - Pedro Díaz H.</span>
-              <button
-                onClick={() => setShowPdf(false)}
-                className="text-gray-400 hover:text-white transition-colors text-xl cursor-pointer"
-              >
-                <i className="fas fa-times"></i>
-              </button>
-            </div>
-            <iframe
-              src="/CV_pedro_Automation_engineer-1.pdf"
-              className="w-full flex-1"
-              title="Curriculum PDF"
-            />
-          </div>
-        </div>
-      )}
     </div>
   )
 }

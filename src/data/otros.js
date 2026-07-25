@@ -6,8 +6,13 @@ export const otros = [
     tags: ['Escritura'],
     year: 2022,
     icon: 'fa-feather',
+    paper: true,
+    book: {
+      title: 'Me equivoqué',
+      author: 'Pedro I. Díaz H.'
+    },
     links: [
-      { label: 'Leer microrelato', url: '/Microrelato_ganador_2022.pdf' }
+      { label: 'Leer microrrelato', url: '/Microrelato_ganador_2022.pdf' }
     ]
   },
   {

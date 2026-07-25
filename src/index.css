@@ -44,6 +44,21 @@ code, .font-mono {
   transform: translateY(-2px);
 }
 
+.paper-card {
+  background: linear-gradient(150deg, rgba(250, 244, 226, 0.78) 0%, rgba(243, 236, 213, 0.71) 55%, rgba(233, 224, 197, 0.65) 100%);
+  backdrop-filter: blur(16px) saturate(1.05);
+  border: 1px solid rgba(255, 251, 235, 0.45);
+  box-shadow: 0 6px 26px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.paper-card:hover {
+  background: linear-gradient(150deg, rgba(252, 247, 233, 0.86) 0%, rgba(246, 240, 220, 0.8) 55%, rgba(237, 229, 204, 0.74) 100%);
+  border-color: rgba(255, 252, 240, 0.65);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.35), 0 0 26px rgba(250, 244, 226, 0.12);
+  transform: translateY(-2px);
+}
+
 .glass-card-static {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
